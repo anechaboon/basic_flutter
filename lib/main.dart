@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'FoodMenu.dart';
 void main() {
   var app = MyApp();
   runApp(app);
@@ -22,6 +22,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  List<FoodMenu> menu = [
+    FoodMenu("Shrimp","2000","assets/images/Shrimp.jpg"),
+    FoodMenu("Pork","100","assets/images/Pork.jpg"),
+  ];
   int number = 0; // create state
 
   @override
@@ -32,15 +37,17 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("Harty"),
         ),
         body: ListView.builder(
-          itemCount: 15,
+          itemCount: menu.length,
           itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(
-              "number ${index+1}",
-              style: TextStyle(fontSize: 25),
-            ),
-            subtitle: Text("minor 1"),
-          );
+            FoodMenu food = menu[index];
+            return ListTile(
+              leading: Image.asset(food.img),
+              title: Text(
+                "${food.name}",
+                style: TextStyle(fontSize: 25),
+              ),
+              subtitle: Text("price ${food.price}"),
+            );
         }));
   }
 }
