@@ -1,8 +1,10 @@
 import 'package:basic_flutter/screen/formscreen.dart';
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
-
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   var app = MyApp();
   runApp(app);
 }
