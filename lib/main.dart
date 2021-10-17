@@ -27,35 +27,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    // list data text widget
-    List<Widget> data = [];
-    data.add(Text("Press to Plus"));
-    data.add(Text(
-      number.toString(),
-      style: TextStyle(fontSize: 60),
-    ));
-    data.add(Text("OK"));
-
+    // display
     return Scaffold(
       appBar: AppBar(
         title: Text("Harty"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: data,
+        child: ListView(
+          children: getData(10),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addNumber,
-        child: Icon(Icons.add),
       ),
     );
   }
 
-  void addNumber() {
-    setState(() {
-      number++;
-    });
+  //prepare data
+  List<Widget> getData(int count){
+    List<Widget> data = [];
+    for(var i = 1; i<=count; i++){
+      data.add(Text("number ${i}"));
+    }
+    return data;
   }
 }
