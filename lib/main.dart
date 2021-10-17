@@ -1,3 +1,4 @@
+import 'package:basic_flutter/screen/formscreen.dart';
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
 
@@ -28,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         length: 2,
         child: Scaffold(
           body: TabBarView(
-            children: [Container(), Container()],
+            children: [FormScreen(), Container()],
           ),
           backgroundColor: Colors.lightBlueAccent,
           bottomNavigationBar: TabBar(tabs: [
