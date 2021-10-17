@@ -26,7 +26,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     // display
     return Scaffold(
       appBar: AppBar(
@@ -41,10 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //prepare data
-  List<Widget> getData(int count){
+  List<Widget> getData(int count) {
     List<Widget> data = [];
-    for(var i = 1; i<=count; i++){
-      data.add(Text("number ${i}"));
+    for (var i = 1; i <= count; i++) {
+      var menu = Text(
+        "number ${i}",
+        style: TextStyle(fontSize: 25),
+      );
+      data.add(menu);
     }
     return data;
   }
