@@ -28,30 +28,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // display
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Harty"),
-      ),
-      body: Center(
-        child: ListView(
-          children: getData(10),
+        appBar: AppBar(
+          title: Text("Harty"),
         ),
-      ),
-    );
-  }
-
-  //prepare data
-  List<Widget> getData(int count) {
-    List<Widget> data = [];
-    for (var i = 1; i <= count; i++) {
-      var menu = ListTile(
-        title: Text(
-          "number ${i}",
-          style: TextStyle(fontSize: 25),
-        ),
-        subtitle: Text("minor 1"),
-      );
-      data.add(menu);
-    }
-    return data;
+        body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(
+              "number ${index+1}",
+              style: TextStyle(fontSize: 25),
+            ),
+            subtitle: Text("minor 1"),
+          );
+        }));
   }
 }
