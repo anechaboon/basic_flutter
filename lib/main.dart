@@ -43,9 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> getData(int count) {
     List<Widget> data = [];
     for (var i = 1; i <= count; i++) {
-      var menu = Text(
-        "number ${i}",
-        style: TextStyle(fontSize: 25),
+      var menu = ListTile(
+        title: Text(
+          "number ${i}",
+          style: TextStyle(fontSize: 25),
+        ),
+        subtitle: Text("minor 1"),
       );
       data.add(menu);
     }
